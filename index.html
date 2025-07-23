@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tela Mídia Empresarial</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      margin: 0;
+      background: #1e1e2f;
+      font-family: Arial, sans-serif;
+      color: #fff;
+    }
+
+    .tela {
+      display: grid;
+      grid-template-areas:
+        "noticia comercial"
+        "mercado tempo";
+      grid-template-columns: 2fr 3fr;
+      grid-template-rows: 1.5fr 1fr;
+      gap: 20px;
+      padding: 20px;
+      height: 100vh;
+      box-sizing: border-box;
+    }
+
+    .noticia {
+      grid-area: noticia;
+      background: #2d2d40;
+      padding: 20px;
+      border-radius: 15px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .noticia h2 {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: #ffcc00;
+    }
+
+    .conteudo-noticia img {
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 10px;
+    }
+
+    .comunicado {
+      background: #1a1a2b;
+      padding: 10px;
+      border-left: 4px solid #ffcc00;
+      margin-top: 15px;
+      font-size: 14px;
+      border-radius: 8px;
+    }
+
+    .comercial {
+      grid-area: comercial;
+      background: #000;
+      border-radius: 15px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .comercial video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .mercado, .tempo {
+      background: #2d2d40;
+      padding: 20px;
+      border-radius: 15px;
+    }
+
+    .mercado h3 {
+      color: #00ff99;
+      margin-bottom: 10px;
+    }
+
+    .mercado ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .mercado li {
+      margin-bottom: 10px;
+      font-size: 18px;
+    }
+
+    .tempo h3 {
+      color: #3399ff;
+      margin-bottom: 10px;
+    }
+
+    .dias {
+      display: flex;
+      justify-content: space-around;
+      text-align: center;
+    }
+
+    .dias img {
+      width: 40px;
+      height: 40px;
+    }
+
+    .up {
+      color: #00ff99;
+    }
+
+    .down {
+      color: #ff5555;
+    }
+
+    @media (max-width: 900px) {
+      .tela {
+        grid-template-areas:
+          "comercial"
+          "noticia"
+          "mercado"
+          "tempo";
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+      }
+
+      .dias {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .conteudo-noticia img {
+        max-height: 200px;
+        object-fit: cover;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="tela">
+    <div class="noticia">
+      <h2>Notícias & Comunicados <span id="hora"></span></h2>
+      <div class="conteudo-noticia">
+        <img src="jornalista.jpg" alt="Notícia" />
+        <p><strong>Notícia:</strong> Crescimento Econômico atinge maior taxa em 10 anos.</p>
+        <p>Especialistas estimam avanço constante nos próximos meses.</p>
+
+        <div class="comunicado">
+          <h4>📢 Comunicado Interno</h4>
+          <p><strong>Assunto:</strong> Reunião Geral às 14h no auditório.</p>
+          <p><em>— RH Corporativo</em></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="comercial">
+      <video autoplay muted loop>
+        <source src="2.mp4" type="video/mp4" />
+        Seu navegador não suporta vídeo.
+      </video>
+    </div>
+
+    <div class="mercado">
+      <h3>Bolsa de Valores</h3>
+      <ul></ul>
+    </div>
+
+    <div class="tempo">
+      <h3>Previsão do Tempo</h3>
+      <div class="dias"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

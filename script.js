@@ -1,5 +1,5 @@
 // 🔑 INSIRA SUAS CHAVES AQUI
-const weatherApiKey = "SUA_API_KEY_OPENWEATHER";
+const weatherApiKey = "6c289d4113ec3d26a15f39708dd196f0";
 const stockApiKey = "SUA_API_KEY_TWELVE_DATA";
 
 // 🌦️ Clima Atual (exemplo para São Paulo)

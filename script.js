@@ -5,7 +5,7 @@ const stockApiKey = "SUA_API_KEY_TWELVE_DATA";
 // 🌦️ Clima Atual (exemplo para São Paulo)
 async function carregarPrevisaoTempo() {
   const cidade = "Sao Paulo";
-  const url = `https://api.openweathermap.org/data/2.5/forecast?q=${cidade}&units=metric&appid=${weatherApiKey}&lang=pt_br`;
+  const url = `https://api.openweathermap.org/data/2.5/weather?q=São Paulo&appid=${weatherApiKey}&units=metric&lang=pt`;
 
   const response = await fetch(url);
   const dados = await response.json();
